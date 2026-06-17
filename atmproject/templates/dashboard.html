@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        .navclass{
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 4px rgba(0,0,0,0.1);
+        }
+        nav ul{
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            background-color: #e2e8f0;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <div class="navclass">
+    <nav>
+        <ul>
+            <li><a href="{{url_for('deposit')}}">Deposit</a></li>
+            <li><a href="{{url_for('withdraw')}}">Withdraw</a></li>
+            <li><a href="{{url_for('balance')}}">Balance</a></li>
+            <li><a href="statements.html">Statements</a></li>
+            <li><a href="logout.html"><button>Logout</button></a></li>
+        </ul>
+    </nav>
+    </div>
+    <br>{{request.cookies.get('UserID')}}
+</body>
+</html>
